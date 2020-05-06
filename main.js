@@ -45,8 +45,16 @@ document.querySelector('.btn-hold').addEventListener("click", function () {
         players[activePlayer] += roundScore;
         //we want to show in the score class
         document.querySelector('#score-' + activePlayer).textContent = players[activePlayer];
+        var inputScore = document.querySelector('.input-score').value;
+        var winnerScore;
+
+        if (inputScore) {
+            winnerScore = inputScore
+        } else {
+            winnerScore = 100;
+        }
         //we want to check the winner
-        if (players[activePlayer] >= 20) {
+        if (players[activePlayer] >= winnerScore) {
             document.querySelector('#name-' + activePlayer).textContent = "Winner by a landslide!"
             document.querySelector('.dice').style.display = "none"
             document.querySelector('.player-' + activePlayer + '-panel').classList.add("winner")
