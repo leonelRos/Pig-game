@@ -11,7 +11,7 @@ GAME RULES:
 
 //create two players and both play in rounds and the active player for each turn// we Add the dice random number from 1 to 6
 
-var players, roundScore, activePlayer, gamePlayed;
+let players, roundScore, activePlayer, gamePlayed;
 
 init();
 
@@ -19,9 +19,9 @@ document.querySelector(".btn-roll").addEventListener("click", function () {
   //this is after the game is done every event listener becomes null
   if (gamePlayed) {
     //this ramdon numbers from 1 to 6
-    var dice = Math.floor(Math.random() * 6) + 1;
+    let dice = Math.floor(Math.random() * 6) + 1;
     //we attached our class dice to rollDice
-    var rollDice = document.querySelector(".dice");
+    let rollDice = document.querySelector(".dice");
     //to display the dice again we use 'block'
     rollDice.style.display = "block";
     //we show random images of the dice  to display in the dice
@@ -48,8 +48,8 @@ document.querySelector(".btn-hold").addEventListener("click", function () {
     //we want to show in the score class
     document.querySelector("#score-" + activePlayer).textContent =
       players[activePlayer];
-    var inputScore = document.querySelector(".input-score").value;
-    var winnerScore;
+    let inputScore = document.querySelector(".input-score").value;
+    let winnerScore;
 
     if (inputScore) {
       winnerScore = inputScore;
